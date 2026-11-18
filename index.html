@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riti Shah | Robotics and AI</title>
+<meta name="description" content="Portfolio of Riti Shah: emotion-aware humanoid robotics, reinforcement learning, and embedded systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F8; --ink:#17203A; --muted:#566079; --line:#D6DCE6;
+  --indigo:#2F3E86; --madder:#B8324F;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#121830; --ink:#E9ECF5; --muted:#A3ACC4; --line:#2A3354; --indigo:#9DB0FF; --madder:#F08AA0; color-scheme:dark;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--indigo);text-underline-offset:3px}
+a:hover{color:var(--madder)}
+a:focus-visible{outline:2px solid var(--madder);outline-offset:3px;border-radius:2px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;gap:2rem;padding:4.5rem 0 3rem;align-items:center}
+@media(min-width:760px){.hero{grid-template-columns:1.25fr 1fr;padding:6rem 0 4rem}}
+h1{font:600 clamp(2.6rem,7vw,4.4rem)/1.02 var(--serif);letter-spacing:-.02em;margin:0 0 1.1rem}
+.lede{font:400 clamp(1.2rem,2.6vw,1.5rem)/1.4 var(--serif);margin:0 0 1rem;max-width:30ch}
+.sub{color:var(--muted);margin:0;max-width:44ch}
+.trace{width:100%;height:auto;max-width:360px;justify-self:center}
+.trace .path{fill:none;stroke:var(--indigo);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640;animation:draw 2.4s ease-out .3s forwards}
+.trace .link{stroke:var(--line);stroke-width:1.5;fill:none}
+.trace .joint{fill:var(--paper);stroke:var(--madder);stroke-width:2.5;opacity:0;animation:pop .4s ease-out forwards}
+.trace .j1{animation-delay:.8s}.trace .j2{animation-delay:1.5s}.trace .j3{animation-delay:2.3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .trace .path{animation:none;stroke-dashoffset:0}
+  .trace .joint{animation:none;opacity:1}
+}
+
+/* sections */
+section{border-top:1px solid var(--line);padding:2.75rem 0}
+h2{font:600 1.65rem/1.2 var(--serif);margin:0 0 1.75rem}
+.entry{display:grid;grid-template-columns:1fr;gap:.35rem;margin:0 0 2.5rem}
+.entry:last-child{margin-bottom:0}
+@media(min-width:760px){.entry{grid-template-columns:13rem 1fr;gap:2rem}}
+.meta{color:var(--muted);font-size:.92rem;line-height:1.5}
+.meta strong{display:block;color:var(--ink);font-weight:600}
+h3{font:600 1.3rem/1.25 var(--serif);margin:0 0 .6rem}
+.entry p{margin:0 0 .8rem;max-width:62ch}
+.entry p.note{color:var(--muted);border-left:3px solid var(--madder);padding-left:.9rem}
+.links{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;margin:0;padding:0;list-style:none;font-weight:500;font-size:.95rem}
+
+/* contact */
+.contact p{margin:0 0 .6rem}
+footer{padding:2rem 0 3.5rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Riti Shah</h1>
+      <p class="lede">I build robots that learn, and I care how people feel around them.</p>
+      <p class="sub">B.Tech in Electronics and Instrumentation Engineering with a Data Science minor, Nirma University. Applying to graduate programs in robotics and human-robot interaction for Fall 2027.</p>
+    </div>
+    <!-- A gesture traced across three joints: a mudra-like arc that ends as a robot-arm trajectory -->
+    <svg class="trace" viewBox="0 0 320 240" role="img" aria-label="A curved line passing through three joints, like a hand gesture or a robot arm trajectory">
+      <path class="link" d="M40 200 L120 120 L210 150 L280 50"/>
+      <path class="path" d="M40 200 C60 120 100 70 140 110 C180 150 220 170 250 120 C268 90 275 70 280 50"/>
+      <circle class="joint j1" cx="40" cy="200" r="9"/>
+      <circle class="joint j2" cx="140" cy="110" r="9"/>
+      <circle class="joint j3" cx="280" cy="50" r="9"/>
+    </svg>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="entry">
+      <div class="meta"><strong>CourtBot</strong>FX31 Labs internship<br>Dec 2025 – Apr 2026<br>Computer vision, reinforcement learning</div>
+      <div>
+        <h3>An autonomous tennis-ball-collecting robot</h3>
+        <p>Built as an affordable alternative to imported systems for tennis academies. The platform moved from a laser-cut acrylic prototype to a 600 × 500 mm welded-steel frame, with an ESP32 for embedded control and vision running on a Raspberry Pi 5.</p>
+        <p>After Docker and Hailo accelerator problems blocked a ROS 2 pipeline, I moved to PyBullet and then NVIDIA Isaac Sim, and trained a PPO navigation agent across 16 parallel environments. Reward shaping fixed an agent that spun in circles and taught it to navigate around the net. A YOLO model trained on 4,935 court images replaced a hand-tuned colour filter for net detection.</p>
+        <p class="note">The trained policy has not yet run on the physical robot. Sim-to-real transfer is the next step.</p>
+        <ul class="links">
+          <li><a href="REPLACE_WITH_COURTBOT_CODE_URL">Code</a></li>
+          <li><a href="REPLACE_WITH_COURTBOT_VIDEO_URL">Demo video</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="meta"><strong>EmoBot</strong>Advisor: Prof. Vishal Vaidya<br>NLP, affective computing</div>
+      <div>
+        <h3>An emotion-aware humanoid robot</h3>
+        <p>A real-time pipeline transcribes speech, classifies it into 11 emotions with a DistilBERT model fine-tuned on GoEmotions, and responds with a gesture and a spoken reply on a Hiwonder TonyPi Pro humanoid driven by a Raspberry Pi 5.</p>
+        <p>Presented to the National Board of Accreditation committee during my university’s institutional review. A research manuscript using EmoBot as a case study is in preparation.</p>
+        <ul class="links">
+          <li><a href="REPLACE_WITH_EMOBOT_CODE_URL">Code</a></li>
+          <li><a href="REPLACE_WITH_EMOBOT_VIDEO_URL">Demo video</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="meta"><strong>Self-balancing robot</strong>Embedded systems, control</div>
+      <div>
+        <h3>A two-wheeled inverted pendulum</h3>
+        <p>An MPU6050 complementary filter and a tuned PID loop on an Arduino keep the robot upright in real time.</p>
+        <ul class="links"><li><a href="REPLACE_WITH_BALANCING_ROBOT_URL">Code</a></li></ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="meta"><strong>Sentiment analysis</strong>NLP, deep learning</div>
+      <div>
+        <h3>An LSTM trained on 50,000 IMDB reviews</h3>
+        <p>Text preprocessing and dropout regularization, reaching 88.3% test accuracy.</p>
+        <ul class="links"><li><a href="REPLACE_WITH_SENTIMENT_URL">Code</a></li></ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <article class="entry">
+      <div class="meta"><strong>Review paper</strong>Advisor: Dr. Parita Oza<br>Under revision (Springer)</div>
+      <div>
+        <h3>AI, creativity, and cognition</h3>
+        <p>Examines how generative-AI use affects cognitive engagement and creative diversity, and argues for deliberate practice as a protective, human-first approach.</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p><a href="mailto:ritishah2206@gmail.com">ritishah2206@gmail.com</a></p>
+    <ul class="links">
+      <li><a href="REPLACE_WITH_LINKEDIN_URL">LinkedIn</a></li>
+      <li><a href="REPLACE_WITH_GITHUB_URL">GitHub</a></li>
+      <li><a href="REPLACE_WITH_RESUME_PDF_URL">Resume (PDF)</a></li>
+    </ul>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">Riti Shah · Vadodara, India</div>
+</footer>
+</body>
+</html>

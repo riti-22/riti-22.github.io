@@ -9,13 +9,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#F4F6F8; --ink:#17203A; --muted:#566079; --line:#D6DCE6;
-  --indigo:#2F3E86; --madder:#B8324F;
-  --serif:"Newsreader",Georgia,"Times New Roman",serif;
-  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  color-scheme:light;
+
+:root {
+  --paper: #F6F6FB;
+  --ink: #292B38;
+  --muted: #697087;
+  --line: #DFE1EC;
+
+  --blueberry: #333C78;
+  --lilac: #D9D6F0;
+  --powder-blue: #AFC9E7;
+  --mint: #9AC9B4;
+
+  --accent: var(--blueberry);
+  --accent-soft: var(--lilac);
+
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "Public Sans", system-ui, sans-serif;
+
+  color-scheme: light;
 }
+
 @media (prefers-color-scheme:dark){
   :root{--paper:#121830; --ink:#E9ECF5; --muted:#A3ACC4; --line:#2A3354; --indigo:#9DB0FF; --madder:#F08AA0; color-scheme:dark;}
 }
